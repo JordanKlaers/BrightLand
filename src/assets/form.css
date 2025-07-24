@@ -1,0 +1,76 @@
+form.contact {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 10px;
+	h2, p {
+		grid-column: 1 / span 3;
+		margin: 0;
+	}
+	label {
+		/* display: none; */
+	}
+	#firstName {
+		grid-column: 1 / span 1;
+	}
+	#lastName {
+		grid-column: 2 / span 1;
+	}
+	#companyName {
+		grid-column: 3 / span 1;
+	}
+	#email {
+		grid-column: 1 / span 2;
+	}
+	#phone {
+		grid-column: 3 / span 1;
+	}
+	#street {
+		grid-column: 1 / span 2;
+	}
+	#addressAdditional {
+		grid-column: 3 / span 1;
+	}
+	#city {
+		grid-column: 1 / span 1;
+	}
+	#state {
+		grid-column: 2 / span 1;
+	}
+	#zip {
+		grid-column: 3 / span 1;
+	}
+	#seriveTypeResidential, #seriveTypeCommerical, #seriveTypeOther {
+		grid-column: 1 / span 3;
+	}
+	#servicesContainer {
+		grid-column: 1 / span 3;
+		display: flex;
+		column-gap: 10px;
+		label {
+			display: none;
+		}
+		> div {
+			flex: 1 1 0;
+		}
+		img {
+			aspect-ratio: 1/1;
+			flex: 1 1 0;
+			max-width: 100%;
+  			object-fit: cover;
+		}
+	}
+	#additionalDetail {
+		grid-column: 1 / span 3;
+		height: 100px;
+	}
+	button[type="submit"] {
+		border-radius: 5px;
+		background-color: gray;
+		height: min-content;
+		padding: 10px 40px;
+		color: white;
+		text-decoration: none;
+		width: max-content;
+		border: 0;
+	}
+}

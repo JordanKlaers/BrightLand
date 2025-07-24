@@ -1,0 +1,52 @@
+@import './header.css';
+@import './home-view.css';
+@import './buttons.css';
+@import './container.css';
+@import './lists.css';
+@import './form.css';
+@import './input.css';
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+:root {
+  --nav-padding: min(40px, max(3vw, 20px));
+  --nav-image-size: 100px;
+}
+img {
+  width: 40px;
+  aspect-ratio: 1 / 1;
+}
+a, button {
+  &:hover {
+		cursor: pointer;
+	}
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  max-height: 400px;;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+}

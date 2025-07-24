@@ -1,0 +1,39 @@
+.list-faq {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.list-img-text {
+	&.horizontal {
+		display: flex;
+		column-gap: 20px;
+		justify-content: space-around;
+	}
+	p {
+		width: 100%;
+	}
+	li.vertical {
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+		> * {
+			margin: auto;
+		}
+	}
+}
+
+.list-navigation {
+	background-color: transparent;
+    /* background-image: linear-gradient(60deg, #315c2d, #64b3ba); */
+	display: flex;
+	margin: auto;
+	/* gap: 10px; */
+	flex-wrap: wrap;
+	justify-content: center;
+	a {
+		padding: 10px;
+		display: inline-block;
+		color: white;
+		text-decoration: none;
+	}
+}

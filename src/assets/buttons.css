@@ -1,0 +1,17 @@
+.dropdown-container {
+	position: relative;
+	.dropdown-menu {
+		position: absolute;
+	}
+}
+
+.button-quote {
+	border-radius: 5px;
+	background-color: gray;
+	height: min-content;
+	padding: 10px 40px;
+	color: white;
+	text-decoration: none;
+	width: max-content;
+	text-align: center;
+}
