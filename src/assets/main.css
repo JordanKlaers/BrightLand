@@ -47,6 +47,11 @@ a, button {
 
     max-width: calc(100vw - 40px);
     max-height: calc(100vh - 40px);
+
+    &.submit-modal {
+      padding: 30px;
+	    text-align: center;
+    }
     img {
       max-width: 100%;
       max-height: calc(100vh - 40px);

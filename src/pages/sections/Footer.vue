@@ -7,10 +7,12 @@ import CompanyInfo from '@/pages/components/CompanyInfo.vue';
 
 <template>
   <footer id="footer">
-    <Navigation />
-    <QuoteLink />
-    <Socials />
-    <CompanyInfo />
+    <div class="container-footer">
+      <Navigation />
+      <QuoteLink />
+      <Socials />
+      <CompanyInfo />
+    </div>
   </footer>
 </template>
 

@@ -5,7 +5,7 @@
 	}
 }
 
-.button-quote {
+.button-quote, .button-close {
 	border-radius: 5px;
 	background-color: gray;
 	height: min-content;

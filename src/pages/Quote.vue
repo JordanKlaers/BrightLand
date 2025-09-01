@@ -1,12 +1,44 @@
 <script setup>
+import { ref, onMounted, Teleport } from 'vue'
+import axios from 'axios'
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
-import companyIcon from '@/assets/images/company-icon.jpg'
+
+const showModal = ref(false)
+
+const form = ref(null)
+onMounted(() => {
+  if (form.value) {
+    form.value.reset()
+  }
+  form.value.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form.value)
+    const data = Object.fromEntries(formData.entries())
+
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
+    axios.post('https://formsubmit.co/ajax/your@email.com', data)
+      .then(response => {
+        showModal.value = true
+        form.value.reset()
+      })
+      .catch(error => console.log(error));
+  })
+})
 </script>
 
 <template>
   <Header />
   <div class="container-quote">
+    <Teleport to="body">
+      <div v-if="showModal" class="modal-backdrop" @click="showModal = false">
+        <div class="modal-content submit-modal">
+          <h2>Thank you for your submission!</h2>
+          <p>We will get back to you as soon as possible.</p>
+          <button class="button-close" @click="showModal = false">Close</button>
+        </div>
+      </div>
+    </Teleport>
     <h1>Get a Free Quote</h1>
     <p>
       At brightland, we specialize in providing top-notch Christmas light installation services. Our team is dedicated
@@ -16,15 +48,15 @@ import companyIcon from '@/assets/images/company-icon.jpg'
     <p>
       Interested in wedding lighting? Drop us a note awe'd love to help make your special day shine.
     </p>
-    <form class="contact" action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST">
+    <form ref="form" class="contact" action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST">
       <h2>Contact Details</h2>
       <input type="hidden" name="_subject" value="New submission!" />
       <input type="text" name="_honey" style="display:none" />
       <input type="hidden" name="_template" value="table" />
-      <input type="text" id="firstName" name="firstName" aria-label="first name" placeholder="First Name">
+      <input type="text" id="firstName" name="firstName" required aria-label="first name" placeholder="First Name">
       <input type="text" id="lastName" name="lastName" aria-label="last name" placeholder="Last Name">
       <input type="text" id="companyName" name="companyName" aria-label="company name" placeholder="Company Name">
-      <input type="text" id="email" name="email" aria-label="email" placeholder="Email address">
+      <input type="email" id="email" name="email" required aria-label="email" placeholder="Email address">
       <input type="text" id="phone" name="phone" aria-label="phone number" placeholder="Phone Number">
       <h2>Address</h2>
       <input type="text" id="street" name="street" aria-label="street" placeholder="Street">
