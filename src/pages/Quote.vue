@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, Teleport } from 'vue'
-import axios from 'axios'
+import { ref, onMounted } from 'vue' //Teleport
+// import axios from 'axios'
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
 
@@ -13,18 +13,20 @@ onMounted(() => {
   }
   form.value.addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(form.value)
-    const data = Object.fromEntries(formData.entries())
-
-    axios.defaults.headers.post['Content-Type'] = 'application/json';
-    axios.post('https://formsubmit.co/ajax/your@email.com', data)
-      .then(response => {
-        showModal.value = true
-        form.value.reset()
-      })
-      .catch(error => console.log(error));
+    // const formData = new FormData(form.value)
+    // const data = Object.fromEntries(formData.entries())
+    showModal.value = true
+    form.value.reset()
+    // axios.defaults.headers.post['Content-Type'] = 'application/json';
+    // axios.post('https://formsubmit.co/ajax/your@email.com', data)
+    //   .then(response => {
+    //     showModal.value = true
+    //     form.value.reset()
+    //   })
+    //   .catch(error => console.log(error));
   })
 })
+// action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST"
 </script>
 
 <template>
@@ -48,7 +50,7 @@ onMounted(() => {
     <p>
       Interested in wedding lighting? Drop us a note awe'd love to help make your special day shine.
     </p>
-    <form ref="form" class="contact" action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST">
+    <form ref="form" class="contact">
       <h2>Contact Details</h2>
       <input type="hidden" name="_subject" value="New submission!" />
       <input type="text" name="_honey" style="display:none" />
