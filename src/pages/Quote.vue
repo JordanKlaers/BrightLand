@@ -16,9 +16,11 @@ import companyIcon from '@/assets/images/company-icon.jpg'
     <p>
       Interested in wedding lighting? Drop us a note awe'd love to help make your special day shine.
     </p>
-    <form class="contact">
+    <form class="contact" action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST">
       <h2>Contact Details</h2>
-
+      <input type="hidden" name="_subject" value="New submission!" />
+      <input type="text" name="_honey" style="display:none" />
+      <input type="hidden" name="_template" value="table" />
       <input type="text" id="firstName" name="firstName" aria-label="first name" placeholder="First Name">
       <input type="text" id="lastName" name="lastName" aria-label="last name" placeholder="Last Name">
       <input type="text" id="companyName" name="companyName" aria-label="company name" placeholder="Company Name">
@@ -48,11 +50,6 @@ import companyIcon from '@/assets/images/company-icon.jpg'
       </label>
       <p>What type of service are you looking for? (optional)</p>
       <div id="servicesContainer">
-        <div><img :src="companyIcon" /></div>
-        <div><img :src="companyIcon" /></div>
-        <div><img :src="companyIcon" /></div>
-        <div><img :src="companyIcon" /></div>
-        <div><img :src="companyIcon" /></div>
         <label for="roofliens" id="rooflines">
           <input type="checkbox" name="roofliens" value="rooflines">
           Rooflines

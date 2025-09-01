@@ -8,7 +8,7 @@ import QuoteLink from '@/pages/components/Quote.vue';
   <header id="header">
     <img :src="companyIcon" />
     <Navigation></Navigation>
-    <QuoteLink />
+    <!-- <QuoteLink /> -->
   </header>
 </template>
 

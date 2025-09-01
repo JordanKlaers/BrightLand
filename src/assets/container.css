@@ -22,6 +22,16 @@
 	padding: var(--nav-padding);
 	background-image: linear-gradient(60deg, #2d3d5c, #64ba91);
 	color: white;
+	margin-top: auto;
+	@media (max-width: 540px) {
+		grid-template-columns: 1fr;
+		> * {
+			grid-column: 1 !important;
+			grid-row: auto !important;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 	nav.navigation a {
 		color: white;
 	}
@@ -31,6 +41,8 @@
 		}
 	}
 	nav.navigation {
+		margin-left: 0;
+		
 		grid-column: 1;
 		grid-row: 1;
 		display: flex;
@@ -63,6 +75,11 @@
 		flex-direction: column;
 		row-gap: 20px;
 		margin-left: auto;
+		@media (max-width: 540px) {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
 	}
 }
 .container-dropdown {
@@ -70,21 +87,8 @@
 	.nested-dropdown {
 		position: relative;
 	}
-	button {
-		color: black;
-		background-color: transparent;
-		background: none;
-		padding: 10px;
-		font-family: 'Roboto', sans-serif;
-		font-size: 16px;
-		border: none;
-		width: 100%;
-		text-align: left;
-		&:hover {
-			text-decoration: none;
-			cursor: pointer;
-			background-color: rgba(0, 0, 0, .3);
-		}
+	svg:hover {
+		cursor: pointer;
 	}
 	.dropdown-menu {
 		position: absolute;
@@ -103,12 +107,28 @@
 			left: 100%;
 			top: 0;
 		}
-		a {
+		.nested-dropdown {
+			display: flex;
+    		flex-direction: column;
+		}
+		a, button {
+			background: none;
 			padding: 10px;
 			color: black;
 			text-decoration: none;
-			width: 100%;
+			border: none;
+			font-family: 'Roboto', sans-serif;
+			font-size: 16px;
+			text-align: left;
 			&:hover {
+				&:first-of-type:not(:last-of-type) {
+					border-top-left-radius: 5px;
+					border-top-right-radius: 5px;
+				}
+				&:last-of-type:not(:first-of-type) {
+					border-bottom-left-radius: 5px;
+					border-bottom-right-radius: 5px;
+				}
 				text-decoration: none;
 				cursor: pointer;
 				background-color: rgba(0, 0, 0, .3);
@@ -134,15 +154,27 @@
 		img {
 			aspect-ratio: 5 / 3;
 			width: 25%;
+			min-width: 150px;
+			max-width: 250px;
 		}
 	}
 }
 
 .container-imgs {
-		display: flex;
-		column-gap: 20px;
-		justify-content: space-around;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr) minmax(150px, 1fr));
+	@media (max-width: 460px) {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	}
+	img {
+		aspect-ratio: 5 / 3;
+		width: 100%;
+		min-width: 150px;
+		max-width: 250px;
+		margin: auto;
+	}
+}
 
 .container-faq {
 	flex: 1;
@@ -159,6 +191,7 @@
 	padding: 20px 60px;
 	display: grid;
 	grid-template-columns: 1fr auto;
+	column-gap: 20px;
 	h1, h2 {
 		margin: auto;
 		grid-column: 1 / span 2;
@@ -171,11 +204,14 @@
 	}
 	p + img {
 		grid-column: 2 / span 1;
-		width: 200px;
-		height: 200px;
+		@media (max-width: 600px) {
+			grid-column: 1 / span 2;
+			margin: auto;
+		}
 	}
 	.team-header {
 		margin-top: 60px;
+		margin-bottom: 20px;
 	}
 }
 

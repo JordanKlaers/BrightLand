@@ -52,31 +52,6 @@ import led_outside_2 from '@/assets/images/led_outside_2.png'
             </p>
           </div>
           <Quote />
-          <div class="container-text-img">
-            <p>more things</p>
-            <img :src="led_outside_1" />
-          </div>
-          <div class="container-text-img">
-            <img :src="led_outside_2" />
-            <div>
-              <h3>Our services</h3>
-              <p>services</p>
-            </div>
-          </div>
-          <!-- <div class="container-imgs" style="--number-of-images: 4;">
-            <a>
-              <img :src="companyIcon" />
-            </a>
-            <a>
-              <img :src="companyIcon" />
-            </a>
-            <a>
-              <img :src="companyIcon" />
-            </a>
-            <a>
-              <img :src="companyIcon" />
-            </a>
-          </div> -->
         </div>
         <Footer />
       </div>

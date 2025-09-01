@@ -39,7 +39,7 @@ const router = createRouter({
       path: '/gallery-commercial',
       name: 'gallery-commercial',
       component: () => import('../pages/Gallery.vue'),
-      props: { title: 'Commerical Lighting Gallery' }
+      props: { title: 'Commercial Lighting Gallery' }
     },
     {
       path: '/gallery-residential',

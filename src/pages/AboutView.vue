@@ -1,7 +1,7 @@
 <script setup>
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
-import watermelonDog from '@/assets/images/watermelonDog.jpeg'
+import Leland from '@/assets/images/Leland.jpg'
 </script>
 <template>
   <Header />
@@ -36,9 +36,9 @@ import watermelonDog from '@/assets/images/watermelonDog.jpeg'
     </p>
     <h2 class="team-header">Meet the Team</h2>
     <p>
-      Something about the team, their expertise, and their dedication to quality and customer satisfaction.
+      My Name is Leland and I'm dedicated to quality and customer satisfaction.
     </p>
-    <img alt="Team Photo" :src="watermelonDog" />
+    <img alt="Team Photo" :src="Leland" />
   </div>
   <Footer />
 </template>

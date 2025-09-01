@@ -28,7 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="containerRef" style="min-height: 200px">
+  <div ref="containerRef">
     <img v-if="imageSrc" :src="imageSrc" :alt="alt" @click="showModal = true" />
     <Teleport to="body">
       <div v-if="showModal" class="modal-backdrop" @click="showModal = false">

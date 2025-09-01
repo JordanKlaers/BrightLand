@@ -12,5 +12,8 @@
 		display: inline-block;
 		vertical-align: top;
 	}
+	nav.isMobile {
+		margin-right: 0;
+	}
 }
 

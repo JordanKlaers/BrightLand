@@ -2,48 +2,24 @@ form.contact {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
+	@media (max-width: 900px) {
+		grid-template-columns: 1fr 1fr;
+	}
+	@media (max-width: 650px) {
+		grid-template-columns: 1fr;
+	}
 	h2, p {
-		grid-column: 1 / span 3;
+		grid-column: 1 / -1;
 		margin: 0;
 	}
-	label {
-		/* display: none; */
-	}
-	#firstName {
-		grid-column: 1 / span 1;
-	}
-	#lastName {
-		grid-column: 2 / span 1;
-	}
-	#companyName {
-		grid-column: 3 / span 1;
-	}
-	#email {
-		grid-column: 1 / span 2;
-	}
-	#phone {
-		grid-column: 3 / span 1;
-	}
-	#street {
-		grid-column: 1 / span 2;
-	}
-	#addressAdditional {
-		grid-column: 3 / span 1;
-	}
-	#city {
-		grid-column: 1 / span 1;
-	}
-	#state {
-		grid-column: 2 / span 1;
-	}
-	#zip {
-		grid-column: 3 / span 1;
+	> * {
+		min-width: 0;
 	}
 	#seriveTypeResidential, #seriveTypeCommerical, #seriveTypeOther {
-		grid-column: 1 / span 3;
+		grid-column: 1 / -1;
 	}
 	#servicesContainer {
-		grid-column: 1 / span 3;
+		grid-column: 1 / -1;
 		display: flex;
 		column-gap: 10px;
 		label {
@@ -60,7 +36,7 @@ form.contact {
 		}
 	}
 	#additionalDetail {
-		grid-column: 1 / span 3;
+		grid-column: 1 / -1;
 		height: 100px;
 	}
 	button[type="submit"] {

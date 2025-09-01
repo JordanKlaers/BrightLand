@@ -9,20 +9,10 @@ import Footer from '@/pages/sections/Footer.vue'
     <h1>Frequently Asked Questions</h1>
     <ul class="list-faq">
       <li>
-        <h2>Question</h2>
-        <p>Answer</p>
-      </li>
-      <li>
-        <h2>Question</h2>
-        <p>Answer</p>
-      </li>
-      <li>
-        <h2>Question</h2>
-        <p>Answer</p>
+        <h2>No Questions Yet</h2>
+        <p>Please reach out with any inquiries you might have!</p>
       </li>
     </ul>
   </div>
   <Footer />
 </template>
-
-<style></style>

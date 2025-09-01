@@ -15,34 +15,36 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateWidth)
 })
-const isMobile = computed(() => windowWidth.value < 768);
+const isMobile = computed(() => windowWidth.value <= 540);
 /*
   Logic for managing if the dropdown for navigation is open/closed
 */
 
 const galleryLinks = [
+  { label: 'Full Gallery', to: '/gallery' },
   { label: 'Residential', to: '/gallery-residential' },
   { label: 'Commercial', to: '/gallery-commercial' },
 ];
 const navigationLinks = [
-  { label: 'Home', to: '/home' },
+  { label: 'Home', to: '/' },
   { label: 'Products', to: '/products' },
   { label: 'Residential', to: '/lighting-residential' },
   { label: 'Commercial', to: '/lighting-commercial' },
-  // { label: 'Gallery', children: galleryDropdown },
+
   { label: 'About Us', to: '/about' },
-  { label: 'FAQ', to: '/faq' }
+  { label: 'FAQ', to: '/faq' },
+  { label: 'Get a Free Quote', to: '/quote' }
 ];
 let donk = [...navigationLinks];
-donk.splice(4, 0, { label: 'Gallery', to: 'gallery', children: galleryLinks });
+donk.splice(4, 0, { label: 'Gallery', to: 'gallery', children: galleryLinks, index: 0 });
 
 </script>
 
 <template>
-  <nav class="list-navigation">
+  <nav :class="`list-navigation ${isMobile ? 'isMobile' : ''}`">
     <!-- MOBILE LAYOUT -->
     <template v-if="isMobile">
-      <Dropdown :items="donk" title="navigation" />
+      <Dropdown :items="donk" title="navigation" :useDropdownIcon="isMobile" />
     </template>
     <!-- DESKTOP LAYOUT -->
     <template v-else>
@@ -53,6 +55,7 @@ donk.splice(4, 0, { label: 'Gallery', to: 'gallery', children: galleryLinks });
       <Dropdown :items="galleryLinks" main="gallery" title="Gallery" />
       <RouterLink to="/about">About Us</RouterLink>
       <RouterLink to="/faq">FAQ</RouterLink>
+      <RouterLink to="/quote">Get a Free Qoute</RouterLink>
     </template>
   </nav>
 </template>
