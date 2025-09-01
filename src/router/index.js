@@ -59,6 +59,10 @@ const router = createRouter({
       component: () => import('../pages/Lighting.vue'),
       props: { title: 'Commercial Christmas Light Installation' }
     },
+    {
+      path: '/:catchAll(.*)',
+      redirect: '/'
+    }
   ],
 })
 
