@@ -11,7 +11,6 @@ const imageMap = reactive({
 })
 
 onMounted(async () => {
-  console.log('Mounted Gallery Full')
   imageMap['commercial'] = Object.entries(loadImages_Commercial()).slice(0, 3).map(([path, loader]) => ({
     path,
     loader,

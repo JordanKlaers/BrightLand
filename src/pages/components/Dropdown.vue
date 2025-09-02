@@ -12,7 +12,7 @@
       <template v-for="(item, index) in items" :key="item.label">
         <button v-if="item.children" :data-index="item.index" class="nested-dropdown" ref="nestedDropdownTrigger">
           {{ item.label }}
-          <div v-if="nestedOpen[item.index]" class="dropdown-menu nested">
+          <div v-show="nestedOpen[item.index]" class="dropdown-menu nested" ref="nestedRef">
             <router-link v-for="itemSub in item.children" :key="itemSub.label" :to="itemSub.to" class=""
               @click="open = false; nestedOpen[index] = false;">
               {{ itemSub.label }}
@@ -44,6 +44,7 @@ const open = ref(false)
 
 const dropdownTrigger = ref(null)
 const nestedDropdownTrigger = ref(null)
+const nestedRef = ref(null)
 const dropdownRef = ref(null)
 
 watch(open, async (isOpen) => {
@@ -53,7 +54,7 @@ watch(open, async (isOpen) => {
       middleware: [
         offset(0),    // spacing in px between trigger and dropdown
         flip(),       // flip to top if no space below
-        shift({ padding: 8 }) // shift to stay in bounds
+        shift({ padding: 8, crossAxis: true }) // shift to stay in bounds
       ]
     }).then(({ x, y }) => {
       Object.assign(dropdownRef.value.style, {
@@ -64,6 +65,26 @@ watch(open, async (isOpen) => {
   }
 })
 
+watch(nestedOpen, async (val) => {
+  val.forEach(async (isOpen, index) => {
+    if (isOpen && nestedDropdownTrigger.value && nestedDropdownTrigger.value[index]) {
+      await computePosition(nestedDropdownTrigger.value[index], nestedRef.value[index], {
+        placement: 'right-start',
+        middleware: [
+          offset(0),    // spacing in px between trigger and dropdown
+          flip(),       // flip to top if no space below
+          shift({ padding: 8 }) // shift to stay in bounds
+        ]
+      }).then(({ x, y }) => {
+        Object.assign(nestedRef.value[index].style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        })
+      })
+    }
+  })
+})
+
 onMounted(() => {
   document.addEventListener('click', (event) => {
     const menuClicked = dropdownTrigger.value == event.target
@@ -72,7 +93,6 @@ onMounted(() => {
     let nestedMenuClickedIndex = null;
     nestedDropdownTrigger?.value && nestedDropdownTrigger.value.forEach(element => {
       if (element == event.target || element.contains(event.target)) {
-        console.log(element.getAttribute('data-index'), 'matched');
         nestedMenuClickedIndex = element.getAttribute('data-index');
       }
     });
