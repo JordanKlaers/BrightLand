@@ -330,9 +330,25 @@
 	max-width: 1024px;
 	margin: auto;
 	width: calc(100% - 120px);
+	.img-gallery img {
+		width: calc((100vw -  120px - 20px) / 2);
+		height: auto;
+		max-width: 400px;
+	}
 	h1 {
 		grid-column: 1 / span 2;
 		text-align: center;
+	}
+	@media (max-width: 600px) {
+		grid-template-columns: 1fr;
+		h1 {
+			grid-column: 1 / span 1;
+			text-align: center;
+		}
+		.img-gallery img {
+			width: calc((100vw -  120px));
+			height: auto;
+		}	
 	}
 }
 
