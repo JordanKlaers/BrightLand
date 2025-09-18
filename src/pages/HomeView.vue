@@ -2,9 +2,6 @@
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
 import Quote from '@/pages/components/Quote.vue'
-import companyIcon from '@/assets/images/company-icon.jpg'
-import led_outside_1 from '@/assets/images/led_outside_1.png'
-import led_outside_2 from '@/assets/images/led_outside_2.png'
 </script>
 
 <template>
@@ -16,17 +13,17 @@ import led_outside_2 from '@/assets/images/led_outside_2.png'
         <div id="bg-img" class="parallax-layer parallax-layer-deep">
         </div>
         <h1 class="parallax-layer parallax-layer-back title">
-          Christmas Light Installation by Brightland
+          Holiday Lights Installation by Brightland
         </h1>
       </div>
       <div id="parallax-group-b" class="parallax-group">
         <div class="container-info">
           <div class="section-info">
             <h2>
-              Seattle’s Custom Christmas Light Experts
+              Seattle’s Custom Holiday Light Experts
             </h2>
             <p>
-              Bring the magic of the holidays to your home or business with professional Christmas light installation
+              Bring the magic of the holidays to your home or business with professional holiday light installation
               from Brightland. With years of experience and a background in both residential and commercial projects, we
               create custom displays that make your property shine all season long.
             </p>

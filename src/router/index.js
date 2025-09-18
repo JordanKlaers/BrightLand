@@ -8,27 +8,35 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        title: "Brightland Lights"
+      }
     },
     {
       path: '/about',
       name: 'about',
       component: () => import('../pages/AboutView.vue'),
+      meta: { title: 'About Us | Brightland Lights' }
     },
 
     {
       path: '/faq',
       name: 'faq',
-    component: () => import('../pages/FAQ.vue'),
+      component: () => import('../pages/FAQ.vue'),
     },
     {
       path: '/quote',
       name: 'quote',
       component: () => import('../pages/Quote.vue'),
+      meta: { title: 'Free Quote Request Form| Brightland Lights' }
     },
     {
       path: '/products',
       name: 'products',
       component: () => import('../pages/Products.vue'),
+      meta: {
+        title: "Products | Brightland Lights"
+      }
     },
     {
       path: '/gallery',
@@ -51,13 +59,15 @@ const router = createRouter({
       path: '/lighting-residential',
       name: 'lighting-residential',
       component: () => import('../pages/Lighting.vue'),
-      props: { title: 'Residential Christmas Light Installation' }
+      props: { title: 'Residential Holiday Light Installation' },
+      meta: { title: 'Residential Holiday Light Installation | Brightland Lights' }
     },
     {
       path: '/lighting-commercial',
       name: 'lighting-commercial',
       component: () => import('../pages/Lighting.vue'),
-      props: { title: 'Commercial Christmas Light Installation' }
+      props: { title: 'Commercial Holiday Light Installation' },
+      meta: { title: 'Commercial Christmas Light Installation | Brightland Lights' }
     },
     {
       path: '/:catchAll(.*)',
@@ -65,6 +75,12 @@ const router = createRouter({
     }
   ],
 })
+
+router.afterEach((to) => {
+  const pageTitle = to && to.meta && to.meta.title || 'Brightland Lights';
+  document.title = pageTitle;
+})
+
 
 export default router
 

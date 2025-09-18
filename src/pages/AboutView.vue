@@ -11,7 +11,7 @@ import Leland from '@/assets/images/Leland.jpg'
       Welcome to <strong>Brightland</strong> — where your holiday dreams shine brighter.
     </p>
     <p>
-      With over 8 years of experience designing and installing custom Christmas lights, Brightland specializes in
+      With over 8 years of experience designing and installing custom Holiday lights, Brightland specializes in
       transforming homes and businesses across the Seattle area into dazzling displays of holiday cheer.
     </p>
     <p>

@@ -12,7 +12,7 @@ onMounted(() => {
     form.value.reset()
   }
   form.value.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault()
     // const formData = new FormData(form.value)
     // const data = Object.fromEntries(formData.entries())
     showModal.value = true
@@ -43,9 +43,10 @@ onMounted(() => {
     </Teleport>
     <h1>Get a Free Quote</h1>
     <p>
-      At brightland, we specialize in providing top-notch Christmas light installation services. Our team is dedicated
-      to making your holiday season brighter and more festive with our professional lighting solutions. Whether you want
-      a simple design or an elaborate display, we can create a custom quote tailored to your needs.
+      At brightland, we specialize in providing top-notch Holiday light installation services. Our
+      team is dedicated to making your holiday season brighter and more festive with our
+      professional lighting solutions. Whether you want a simple design or an elaborate display, we
+      can create a custom quote tailored to your needs.
     </p>
     <p>
       Interested in wedding lighting? Drop us a note awe'd love to help make your special day shine.
@@ -53,63 +54,125 @@ onMounted(() => {
     <form ref="form" class="contact">
       <h2>Contact Details</h2>
       <input type="hidden" name="_subject" value="New submission!" />
-      <input type="text" name="_honey" style="display:none" />
+      <input type="text" name="_honey" style="display: none" />
       <input type="hidden" name="_template" value="table" />
-      <input type="text" id="firstName" name="firstName" required aria-label="first name" placeholder="First Name">
-      <input type="text" id="lastName" name="lastName" aria-label="last name" placeholder="Last Name">
-      <input type="text" id="companyName" name="companyName" aria-label="company name" placeholder="Company Name">
-      <input type="email" id="email" name="email" required aria-label="email" placeholder="Email address">
-      <input type="text" id="phone" name="phone" aria-label="phone number" placeholder="Phone Number">
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        required
+        aria-label="first name"
+        placeholder="First Name"
+      />
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        required
+        aria-label="last name"
+        placeholder="Last Name"
+      />
+      <input
+        type="text"
+        id="companyName"
+        name="companyName"
+        aria-label="company name"
+        placeholder="Company Name"
+      />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        aria-label="email"
+        placeholder="Email address"
+      />
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        required
+        aria-label="phone number"
+        placeholder="Phone Number"
+      />
       <h2>Address</h2>
-      <input type="text" id="street" name="street" aria-label="street" placeholder="Street">
-      <input type="text" id="addressAdditional" name="addressAdditional"
+      <input
+        required
+        type="text"
+        id="street"
+        name="street"
+        aria-label="street"
+        placeholder="Street"
+      />
+      <input
+        type="text"
+        id="addressAdditional"
+        name="addressAdditional"
         aria-label="Apartment Number, suite, Floor (if applicable)"
-        placeholder="Apt. Number, Suite, Floor (if applicable)">
-      <input type="text" id="city" name="city" aria-label="city" placeholder="City">
-      <input type="text" id="state" name="state" aria-label="state" placeholder="State">
-      <input type="text" id="zip" name="zip" aria-label="zip code" placeholder="Zip Code">
+        placeholder="Apt. Number, Suite, Floor (if applicable)"
+      />
+      <input required type="text" id="city" name="city" aria-label="city" placeholder="City" />
+      <select name="state" id="state" aria-label="state" required>
+        <option value="">Please choose your state</option>
+        <option value="apple">Washington</option>
+        <option value="banana">Oregon</option>
+        <option value="orange">Idaho</option>
+      </select>
+      <input
+        required
+        type="text"
+        id="zip"
+        name="zip"
+        aria-label="zip code"
+        placeholder="Zip Code"
+      />
       <h2>Service Request Details</h2>
       <p>Is this for a residential, commercial, or something else?</p>
       <label for="serviceType" id="seriveTypeResidential">
-        <input type="checkbox" name="serviceType" value="residential">
+        <input type="checkbox" name="serviceType" value="residential" />
         Residential
       </label>
       <label for="commercial" id="seriveTypeCommercial">
-        <input type="checkbox" name="serviceType" value="commercial">
+        <input type="checkbox" name="serviceType" value="commercial" />
         Commercial
       </label>
       <label for="other" id="seriveTypeOther">
-        <input type="checkbox" name="other" value="other">
+        <input type="checkbox" name="other" value="other" />
         Other (i.e. wedding)
       </label>
       <p>What type of service are you looking for? (optional)</p>
       <div id="servicesContainer">
         <label for="roofliens" id="rooflines">
-          <input type="checkbox" name="roofliens" value="rooflines">
+          <input type="checkbox" name="roofliens" value="rooflines" />
           Rooflines
         </label>
         <label for="trees" id="trees">
-          <input type="checkbox" name="trees" value="trees">
+          <input type="checkbox" name="trees" value="trees" />
           Trees
         </label>
         <label for="yard" id="yard">
-          <input type="checkbox" name="yard" value="yard">
+          <input type="checkbox" name="yard" value="yard" />
           Yard
         </label>
         <label for="wreaths" id="wreaths">
-          <input type="checkbox" name="wreaths" value="wreaths">
+          <input type="checkbox" name="wreaths" value="wreaths" />
           Wreaths & Garland
         </label>
         <label for="otherService" id="otherService">
-          <input type="checkbox" name="otherService" value="other">
+          <input type="checkbox" name="otherService" value="other" />
           Other
         </label>
       </div>
-      <textarea type="textfield" id="additionalDetail" name="additionalDetail"
-        placeholder="Please add any additional details, requests or vision." />
-      <p>By providing your email, you conscent to receiving marketing emails and promotions. You can unsubscribe at
-        any
-        time.</p>
+      <textarea
+        type="textfield"
+        id="additionalDetail"
+        name="additionalDetail"
+        placeholder="Please add any additional details, requests or vision."
+      />
+      <p>
+        By clicking Submit, you consent to the data entered in the form being shared with Brightland
+        Lights LLC
+      </p>
       <button type="submit">Submit</button>
     </form>
   </div>

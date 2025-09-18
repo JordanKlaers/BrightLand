@@ -258,21 +258,6 @@
 	}
 	h1 {
 		margin: 0 auto;
-		&#bg-img {
-			margin: 0;
-			height: 200px;
-			width: 100%;
-			position: relative;
-			span {
-				width: 100%;
-				text-align: center;
-				background-color: rgba(255, 255, 255, .6);
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				position: absolute;
-			}
-		}
 	}
 	ul {
 		list-style: none;
@@ -285,6 +270,12 @@
 				margin: auto 0;
 			}
 		}
+	}
+	img {
+		height: 100px;
+		width: auto;
+		margin-right: auto;
+		/* width: clamp(100px, 40vw, 200px); */
 	}
 }
 
@@ -313,6 +304,8 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			position: absolute;
+			padding: 10px 0;
+			backdrop-filter: blur(2px);
 		}
 	}
 	h2 {
@@ -321,37 +314,51 @@
 }
 
 .container-gallery {
-	padding: 20px 60px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	place-items: center;
-	column-gap: 20px;
-	row-gap: 20px;
+	padding: 20px 0px;
 	max-width: 1024px;
 	margin: auto;
-	width: calc(100% - 120px);
+	width: 100%;
+
+	h1 {
+		width: 100% !important;
+	}
+	.grid-sizer {
+		width: 50%;
+	}
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.img-gallery {
+		padding-bottom: 0px;
+		width: 50%;
+		position: relative;
+		min-width: 200px;
+		.img-container {
+			padding: 15px;
+		}
+	}
 	.img-gallery img {
-		width: calc((100vw -  120px - 20px) / 2);
-		height: auto;
-		max-width: 400px;
+		width: 100%;
+		display: block;
 	}
 	h1 {
 		grid-column: 1 / span 2;
 		text-align: center;
 	}
-	@media (max-width: 600px) {
-		grid-template-columns: 1fr;
-		h1 {
-			grid-column: 1 / span 1;
-			text-align: center;
+}
+@media (max-width: 600px) {
+	.container-gallery {
+		.grid-sizer {
+			width: 100%;
 		}
-		.img-gallery img {
-			width: calc((100vw -  120px));
-			height: auto;
-		}	
+		.img-gallery {
+			width: 100%;
+		}
 	}
 }
-
+		
 .container-lighting {
 	padding: 20px 60px;
 	display: flex;
@@ -380,6 +387,8 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 				position: absolute;
+				padding: 10px 0;
+				
 			}
 		}
 	}
@@ -388,13 +397,7 @@
 		margin: 0;
 		padding: 0;
 		li {
-			padding-bottom: 10px;
-			/* display: flex;
-			flex-direction: column;
-			column-gap: 10px;
-			> * {
-				margin: auto 0;
-			} */
+			padding-bottom: 20px;
 		}
 	}
 }

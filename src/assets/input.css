@@ -5,4 +5,19 @@ input[type="text"], input[type="email"] {
 	&:user-invalid, invalid {
 		border: 2px solid red;
 	}
+	&[required] {
+		box-shadow: 2px 2px 1px #64ba9163;
+	}
+}
+
+select {
+	border-radius: 5px;
+	height: 40px;
+	box-sizing: content-box;
+	&:user-invalid, invalid {
+		border: 2px solid red;
+	}
+	&[required] {
+		box-shadow: 2px 2px 1px #64ba9163;
+	}
 }

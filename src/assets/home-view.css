@@ -1,7 +1,7 @@
 
 		/* &--back{
 			transform: translateZ(-0.5px) scale(1.5);
-			background-image: url("./christmaslights.jpg");
+			background-image: url("./IMG_2745.jpg");
 			background-position: center;
 			background-size: cover;
 			} */
@@ -16,7 +16,7 @@
 	}
 }
 #bg-img {
-	background-image: url("./images/christmaslights.jpg");
+	background-image: url("./images/residential/IMG_2745.jpg");
 	background-position: center;
 	background-size: cover;
 }

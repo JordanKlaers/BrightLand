@@ -6,17 +6,9 @@ img[alt="Team Photo"] {
 
 .img-gallery img {
 	object-fit: cover;
-	aspect-ratio: 1.5 / 1;
 	height: auto;
 	/* width: clamp(200px, 40vw, 400px); */
 	&:hover {
 		cursor: pointer;
-	}
-}
-
-.container-products {
-	img {
-		width: 40px;
-		aspect-ratio: 1 / 1;
 	}
 }
