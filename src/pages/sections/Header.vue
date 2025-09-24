@@ -1,7 +1,6 @@
 <script setup>
 import Navigation from '@/pages/components/Navigation.vue'
-import companyIcon from '@/assets/images/residential/IMG_1675.jpg'
-
+import companyIcon from '@/assets/images/BrightlandLogo.png'
 </script>
 
 <template>

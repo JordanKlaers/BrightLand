@@ -20,6 +20,14 @@
 			width: auto;
 			margin: auto;
 		}
+		p {
+			display: flex;
+			flex-direction: column;
+			strong {
+				margin: auto;
+				font-size: 1.2em;
+			}
+		}
 	}
 	&.bulb-types {
 		display: flex;
@@ -45,6 +53,8 @@
 		display: inline-block;
 		color: white;
 		text-decoration: none;
+
+		font-size: 18px;
 		&:hover {
 			cursor: pointer;
 		}

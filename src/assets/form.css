@@ -49,4 +49,7 @@ form.contact {
 		width: max-content;
 		border: 0;
 	}
+	.form-consent {
+		font-size: 0.9em;
+	}
 }

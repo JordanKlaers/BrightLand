@@ -2,6 +2,7 @@
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
 import Storage from '@/assets/images/storage.png'
+import Takedown from '@/assets/images/takedown.png'
 import Design from '@/assets/images/design.png'
 import Install from '@/assets/images/customInstallation.png'
 import ServiceCalls from '@/assets/images/serviceCalls.png'
@@ -133,7 +134,7 @@ const props = defineProps({
           </p>
         </li>
         <li class="vertical">
-          <img src="" />
+          <img :src="Takedown" />
           <p>
             <strong>Takedown</strong><br />When the holidays are over, we’ll return to carefully
             remove everything without damaging your home or landscape.

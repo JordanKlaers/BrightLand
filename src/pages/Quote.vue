@@ -3,8 +3,9 @@ import { ref, onMounted } from 'vue' //Teleport
 // import axios from 'axios'
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
-
+import { useRouter } from 'vue-router'
 const showModal = ref(false)
+const router = useRouter()
 
 const form = ref(null)
 onMounted(() => {
@@ -27,17 +28,22 @@ onMounted(() => {
   })
 })
 // action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST"
+
+const handleConfirmationClose = () => {
+  showModal.value = false
+  router.push('/')
+}
 </script>
 
 <template>
   <Header />
   <div class="container-quote">
     <Teleport to="body">
-      <div v-if="showModal" class="modal-backdrop" @click="showModal = false">
+      <div v-if="showModal" class="modal-backdrop" @click="handleConfirmationClose">
         <div class="modal-content submit-modal">
           <h2>Thank you for your submission!</h2>
           <p>We will get back to you as soon as possible.</p>
-          <button class="button-close" @click="showModal = false">Close</button>
+          <button class="button-close" @click="handleConfirmationClose">Close</button>
         </div>
       </div>
     </Teleport>
@@ -138,7 +144,7 @@ onMounted(() => {
       </label>
       <label for="other" id="seriveTypeOther">
         <input type="checkbox" name="other" value="other" />
-        Other (i.e. wedding)
+        Other (i.e. backyards, patios)
       </label>
       <p>What type of service are you looking for? (optional)</p>
       <div id="servicesContainer">
@@ -169,7 +175,7 @@ onMounted(() => {
         name="additionalDetail"
         placeholder="Please add any additional details, requests or vision."
       />
-      <p>
+      <p class="form-consent">
         By clicking Submit, you consent to the data entered in the form being shared with Brightland
         Lights LLC
       </p>
