@@ -39,11 +39,6 @@ const router = createRouter({
       }
     },
     {
-      path: '/gallery',
-      name: 'gallery',
-      component: () => import('../pages/GalleryFull.vue'),
-    },
-    {
       path: '/gallery-commercial',
       name: 'gallery-commercial',
       component: () => import('../pages/Gallery.vue'),

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue' //Teleport
-// import axios from 'axios'
+import axios from 'axios'
 import Header from '@/pages/sections/Header.vue'
 import Footer from '@/pages/sections/Footer.vue'
 import { useRouter } from 'vue-router'
@@ -12,22 +12,31 @@ onMounted(() => {
   if (form.value) {
     form.value.reset()
   }
+
   form.value.addEventListener('submit', (e) => {
     e.preventDefault()
-    // const formData = new FormData(form.value)
-    // const data = Object.fromEntries(formData.entries())
+    const formData = new FormData(form.value)
+    const data = Object.fromEntries(formData.entries())
     showModal.value = true
     form.value.reset()
-    // axios.defaults.headers.post['Content-Type'] = 'application/json';
-    // axios.post('https://formsubmit.co/ajax/your@email.com', data)
-    //   .then(response => {
-    //     showModal.value = true
-    //     form.value.reset()
-    //   })
-    //   .catch(error => console.log(error));
+    axios.defaults.headers.post['Content-Type'] = 'application/json'
+    console.log('should be sending')
+    axios({
+      url: 'https://formsubmit.co/ajax/d08203bed5dd0496001dee2ec817716a',
+      method: 'POST',
+      data,
+      responseType: 'json',
+    })
+      .then((response) => {
+        console.log(response.data)
+        showModal.value = true
+        form.value.reset()
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   })
 })
-// action="https://formsubmit.co/1c0c2092d26fa9c094cba9e5a95d1038" method="POST"
 
 const handleConfirmationClose = () => {
   showModal.value = false
@@ -120,9 +129,9 @@ const handleConfirmationClose = () => {
       <input required type="text" id="city" name="city" aria-label="city" placeholder="City" />
       <select name="state" id="state" aria-label="state" required>
         <option value="">Please choose your state</option>
-        <option value="apple">Washington</option>
-        <option value="banana">Oregon</option>
-        <option value="orange">Idaho</option>
+        <option value="Washington">Washington</option>
+        <option value="Oregon">Oregon</option>
+        <option value="Idaho">Idaho</option>
       </select>
       <input
         required

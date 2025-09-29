@@ -21,7 +21,7 @@ body {
 }
 :root {
   --nav-padding: min(40px, max(3vw, 20px));
-  --nav-image-size: 100px;
+  --nav-image-size: 180px;
 }
 
 a, button {

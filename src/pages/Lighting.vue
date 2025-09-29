@@ -14,7 +14,10 @@ const props = defineProps({
 <template>
   <Header />
   <div class="container-lighting">
-    <h1 id="bg-img">
+    <h1
+      id="bg-img"
+      :class="`${props.title.toLowerCase().includes('residential') ? 'residential' : 'commercial'}`"
+    >
       <span>{{ props.title }}</span>
     </h1>
     <template v-if="title.toLowerCase().includes('commercial')">

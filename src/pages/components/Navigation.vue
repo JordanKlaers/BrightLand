@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue'
 import { RouterLink } from 'vue-router'
-import Dropdown from './Dropdown.vue';
+import Dropdown from './Dropdown.vue'
 /*
   Logic for swapping nav structure between smaller and larger window widths
 */
@@ -15,16 +15,15 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateWidth)
 })
-const isMobile = computed(() => windowWidth.value <= 540);
+const isMobile = computed(() => windowWidth.value <= 540)
 /*
   Logic for managing if the dropdown for navigation is open/closed
 */
 
 const galleryLinks = [
-  { label: 'Full Gallery', to: '/gallery' },
   { label: 'Residential', to: '/gallery-residential' },
   { label: 'Commercial', to: '/gallery-commercial' },
-];
+]
 const navigationLinks = [
   { label: 'Home', to: '/' },
   { label: 'Products', to: '/products' },
@@ -33,11 +32,10 @@ const navigationLinks = [
 
   { label: 'About Us', to: '/about' },
   { label: 'FAQ', to: '/faq' },
-  { label: 'Get a Free Quote', to: '/quote' }
-];
-let donk = [...navigationLinks];
-donk.splice(4, 0, { label: 'Gallery', to: 'gallery', children: galleryLinks, index: 0 });
-
+  { label: 'Get a Free Quote', to: '/quote' },
+]
+let donk = [...navigationLinks]
+donk.splice(4, 0, { label: 'Gallery', to: 'gallery', children: galleryLinks, index: 0 })
 </script>
 
 <template>

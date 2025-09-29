@@ -17,7 +17,15 @@
 }
 #bg-img {
 	background-image: url("./images/residential/IMG_2745.jpg");
-	background-position: center;
+	background-position: center;	
+	&.commercial {
+		background-image: url("./images/commercial/IMG_4476.jpg");
+		background-position: 50% 65%;	
+	}
+	&.residential {
+		background-image: url("./images/residential/IMG_8710.png");
+		background-position: 50% 57%;
+	}
 	background-size: cover;
 }
 .parallax {
