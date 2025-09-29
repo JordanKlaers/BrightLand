@@ -3,7 +3,7 @@
 
 <template>
   <div className="container-company-info">
-    <span>Brightland@emailaddress.com</span>
+    <span>brightlandholidaylights@gmail.com</span>
     <span>Brightland Legal/Insurance</span>
     <span>
       <i class="fa-solid fa-location-pin"></i>

@@ -1,1 +1,0 @@
-const D="/BrightLand/assets/72211953722__1D3DA4DB-A7CB-4C86-B23E-93CD428D14AD-CS5KFqIX.png";export{D as default};

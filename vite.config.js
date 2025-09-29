@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import postcssNested from 'postcss-nested'
 
 export default defineConfig({
-  base: 'BrightLand',
+  base: '/',
   plugins: [
     vue(),
     vueDevTools(),
