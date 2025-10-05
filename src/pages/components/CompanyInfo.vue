@@ -7,7 +7,7 @@
     <span>Brightland Legal/Insurance</span>
     <span>
       <i class="fa-solid fa-location-pin"></i>
-      Servicing all Washington
+      Serving the Seattle area
     </span>
   </div>
 </template>
