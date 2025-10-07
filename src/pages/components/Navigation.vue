@@ -53,7 +53,7 @@ donk.splice(4, 0, { label: 'Gallery', to: 'gallery', children: galleryLinks, ind
       <Dropdown :items="galleryLinks" main="gallery" title="Gallery" />
       <RouterLink to="/about">About Us</RouterLink>
       <RouterLink to="/faq">FAQ</RouterLink>
-      <RouterLink to="/quote">Get a Free Qoute</RouterLink>
+      <RouterLink to="/quote">Get a Free Quote</RouterLink>
     </template>
   </nav>
 </template>
